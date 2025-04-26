@@ -8,7 +8,7 @@
   />
 
   <div class="my-2 mx-10 px-2 d-flex" style="justify-content: space-between;">
-    <v-btn icon="mdi-arrow-left" @click="previousDate" />
+    <v-btn :disabled="isLowerLimit(selectedDate)" icon="mdi-arrow-left" @click="previousDate" />
     <v-btn icon="mdi-arrow-right" @click="nextDate" />
   </div>
 </template>
@@ -20,6 +20,8 @@
   const selectedDate = ref(new Date());
 
   function previousDate () {
+    if(isLowerLimit(selectedDate.value)) return;
+
     const date = new Date(selectedDate.value.getFullYear(),
                           selectedDate.value.getMonth(),
                           selectedDate.value.getDate() - 1);
@@ -38,6 +40,10 @@
       selectedDate.value = date;
       props.onUpdateDate(date);
     }
+  }
+
+  function isLowerLimit (date: Date): boolean {
+    return date.getFullYear() === 2025 && date.getMonth() === 3 && date.getDate() === 1;
   }
 
 </script>

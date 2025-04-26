@@ -4,10 +4,10 @@
     height="40"
   >
     <div
-      class="text-caption text-disabled"
+      class="text-caption"
       style="position: absolute; right: 16px;"
     >
-      <span class="d-none d-sm-inline-block">developed by</span>
+      <span class="text-disabled">developed by</span>
       <span class="text-decoration-none on-surface">
         Pratik Nerurkar
       </span>

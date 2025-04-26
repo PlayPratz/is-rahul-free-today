@@ -1,6 +1,6 @@
 <template>
-  <v-container class="text-center" fluid :style="`background: ${getColour(dayType)}; height: 100%`">
-    <div class="mt-10 pt-10" style="height: 32vh">
+  <v-container class="d-flex flex-column justify-content-between text-center" fluid :style="`background: ${getColour(dayType)}; height: 100%`">
+    <div class="mt-2">
       <div class="bg-grey-darken-4 px-2 py-2 mx-auto">
         <h1 class="font-weight-light">
           {{ getStatus(dayType) }}
@@ -26,7 +26,6 @@
     const millisecondgap = Math.abs(date.getTime() - reference.valueOf());
     const millisinday = 1000 * 60 * 60 * 24
     const dayGap = Math.floor(millisecondgap / millisinday) % millisinday;
-    console.log(dayGap);
     const dayType = dayGap%4;
     return dayType;
   }
@@ -46,7 +45,7 @@
       case 0: return 'Rahul has his first day off!';
       case 1: return 'Rahul has his second day off!';
       case 2: return 'Rahul will report at 9pm.';
-      case 3: return 'Rahul will leave from work at 7pm, but has to report again at 9am.';
+      case 3: return 'Rahul will work tomorrow as well :-(';
     }
     return 'error';
   }
