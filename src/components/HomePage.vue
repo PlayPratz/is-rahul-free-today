@@ -45,7 +45,7 @@
       case 0: return 'Rahul has his first day off!';
       case 1: return 'Rahul has his second day off!';
       case 2: return 'Rahul will report at 9pm.';
-      case 3: return 'Rahul will work tomorrow as well :-(';
+      case 3: return 'Rahul will work tonight as well :-(';
     }
     return 'error';
   }
