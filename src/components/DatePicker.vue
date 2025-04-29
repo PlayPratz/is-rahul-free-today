@@ -46,4 +46,11 @@
     return date.getFullYear() === 2025 && date.getMonth() === 3 && date.getDate() === 1;
   }
 
+  addEventListener('keydown', _ => {
+    if(_.key === 'ArrowLeft') {
+      previousDate()
+    } else if (_.key === 'ArrowRight') {
+      nextDate()
+    }
+  } );
 </script>
