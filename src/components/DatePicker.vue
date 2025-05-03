@@ -2,7 +2,7 @@
 
   <v-date-picker
     class="mx-auto"
-    min="2025-04-01"
+    min="2025-05-02"
     :model-value="selectedDate"
     @update:model-value="updateDate"
   />
@@ -43,7 +43,7 @@
   }
 
   function isLowerLimit (date: Date): boolean {
-    return date.getFullYear() === 2025 && date.getMonth() === 3 && date.getDate() === 1;
+    return date.getFullYear() === 2025 && date.getMonth() === 4 && date.getDate() === 2;
   }
 
   addEventListener('keydown', _ => {
