@@ -2,7 +2,7 @@
 
   <v-date-picker
     class="mx-auto"
-    min="2025-05-02"
+    :min="`${REFERENCE_DATE.getFullYear()}-${REFERENCE_DATE.getMonth()+1}-${REFERENCE_DATE.getDate()}`"
     :model-value="selectedDate"
     @update:model-value="updateDate"
   />
@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+
+  import { REFERENCE_DATE } from '../stores/app.ts';
 
   const props = defineProps<{ onUpdateDate: (date: Date) => void }>();
 
@@ -43,7 +45,9 @@
   }
 
   function isLowerLimit (date: Date): boolean {
-    return date.getFullYear() === 2025 && date.getMonth() === 4 && date.getDate() === 2;
+    return date.getFullYear() === REFERENCE_DATE.getFullYear()
+      && date.getMonth() === REFERENCE_DATE.getMonth()
+      && date.getDate() === REFERENCE_DATE.getDate();
   }
 
   addEventListener('keydown', _ => {

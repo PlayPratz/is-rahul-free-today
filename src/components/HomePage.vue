@@ -18,6 +18,8 @@
 
 <script setup lang="ts">
 
+  import { REFERENCE_DATE } from '../stores/app.ts';
+
   const dayType = ref(getDayType(new Date()));
 
   function onUpdateDate (date: Date) {
@@ -26,7 +28,7 @@
   }
 
   function getDayType (date: Date): number {
-    const reference = new Date(2025, 4, 2);
+    const reference = REFERENCE_DATE;
     const millisecondgap = Math.abs(date.getTime() - reference.valueOf());
     const millisinday = 1000 * 60 * 60 * 24
     const dayGap = Math.floor(millisecondgap / millisinday) % millisinday;
